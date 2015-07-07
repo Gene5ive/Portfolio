@@ -1,5 +1,5 @@
-class Project < ActiveRecord::Base
-  has_many :skills
+class Skill < ActiveRecord::Base
+  belongs_to :project
 
   validates :name, :description, :presence => true
 end

@@ -14,7 +14,8 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
-      redirect_to projects_path
+      flash[:notice] = "Project successfully added!"
+      redirect_to projects_path #(or project_path@project)
     else
       render :new
     end
@@ -24,8 +25,23 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  def update
+    @project = Project.find(params[:id])
+    if @project.update(project_params)
+      redirect_to projects_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to projects_path
+  end
+
   private
   def project_params
-    params.require(:project).permit(:name)
+    params.require(:project).permit(:name, :description)
   end
 end
