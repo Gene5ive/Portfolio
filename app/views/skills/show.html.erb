@@ -4,18 +4,19 @@
   <li><a href="/skills">Skills</a></li>
 <% end %>
 
-<h1><%= @skill.name %></h1>
-<h2><%= @skill.description %></h2>
+<h1>Skill: <%= @skill.name %></h1>
+<h2>Description: <%= @skill.description %></h2>
 
 <% if @skill.projects.any? %>
   <h4>Here are all the projects I completed using this skill:</h4>
   <ul>
     <% @skill.projects.each do |project| %>
       <li>
-        <%= project.name %>
-        <%= project.description %>
-        <%= link_to "Edit", edit_skill_path(@skill, project) %>
-        <%= link_to "Delete", skill_path(@skill, project),
+        <%= project.name %> |
+        <%= project.description %> |
+        <%= project.project_link %> |
+        <%= link_to "Edit", edit_skill_project_path(@skill, project) %> |
+        <%= link_to "Delete", skill_project_path(@skill, project),
                                  :data => { :confirm => "You sure?",
                                             :method => "Delete" }%>
       </li>
@@ -25,8 +26,9 @@
   <p>No projects have been described yet!</p>
 <% end %>
 
-<p><%= link_to "Edit", edit_skill_path(@skill) %></p>
-<p><%= link_to "Delete", skill_path(@skill),
+<p><%= link_to "Add Project", new_skill_project_path(@skill) %></p>
+<p><%= link_to "Edit Skill", edit_skill_path(@skill) %></p>
+<p><%= link_to "Delete Skill", skill_path(@skill),
                          :data => { :confirm => "You sure?",
                                     :method => "Delete" }%></p>
-<p><%= link_to "Return to skills", skills_path %></p>
+<p><%= link_to "Return to Skills", skills_path %></p>

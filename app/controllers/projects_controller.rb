@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
     @project = @skill.projects.new(project_params)
     if @project.save
       flash[:notice] = "Project successfully added!"
-      redirect_to skill_project_path(@skill.project)
+      redirect_to skill_path(@skill)
     else
       render :new
     end
@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
     @skill = Skill.find(params[:skill_id])
     @project = @skill.projects.find(params[:id])
     if @project.update(project_params)
-      redirect_to skill_project_path(@skill.project)
+      redirect_to skill_path(@skill)
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
     @skill = Skill.find(params[:skill_id])
     @project = @skill.projects.find(params[:id])
     @project.destroy
-    redirect_to skill_project_path(@skill.project)
+    redirect_to skill_path(@skill)
   end
 
   private
