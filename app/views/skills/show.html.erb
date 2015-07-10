@@ -1,22 +1,21 @@
 <% content_for(:title, "Portfolio") %>
 <% content_for(:navbar) do %>
   <li><a href="/">Home</a></li>
-  <li><a href="/projects">Projects</a></li>
+  <li><a href="/skills">Skills</a></li>
 <% end %>
 
-<h1><%= @skill.project.name %></h1>
-<h2><%= @skill.project.description %></h2>
-<h2><%= @skill.project.project_link %></h2>
+<h1><%= @skill.name %></h1>
+<h2><%= @skill.description %></h2>
 
 <% if @skill.projects.any? %>
-  <h4>Here are all the skills I developed to complete this project:</h4>
+  <h4>Here are all the projects I completed using this skill:</h4>
   <ul>
-    <% @project.skills.each do |skill| %>
+    <% @skill.projects.each do |project| %>
       <li>
-        <%= skill.name %>
-        <%= skill.description %>
+        <%= project.name %>
+        <%= project.description %>
         <%= link_to "Edit", edit_skill_path(@skill, project) %>
-        <%= link_to "Delete", skill_project_path(@skill, project),
+        <%= link_to "Delete", skill_path(@skill, project),
                                  :data => { :confirm => "You sure?",
                                             :method => "Delete" }%>
       </li>
@@ -26,8 +25,8 @@
   <p>No projects have been described yet!</p>
 <% end %>
 
-<p><%= link_to "Edit", edit_skill_project_path(@project) %></p>
-<p><%= link_to "Delete", skill_path(@project),
+<p><%= link_to "Edit", edit_skill_path(@skill) %></p>
+<p><%= link_to "Delete", skill_path(@skill),
                          :data => { :confirm => "You sure?",
                                     :method => "Delete" }%></p>
-<p><%= link_to "Return to projects", skills_path %></p>
+<p><%= link_to "Return to skills", skills_path %></p>

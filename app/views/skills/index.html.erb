@@ -1,0 +1,12 @@
+<h1>Skills</h1>
+
+<ul>
+  <% @skills.each do |skill| %>
+  <li><%= link_to skill.name, skill_path(skill) %>
+      <%= link_to "Delete", skill_path(skill),
+                           :data => { :confirm => "You sure?",
+                                      :method => "Delete" } %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Add Skill", new_skill_path(@skill) %></p>

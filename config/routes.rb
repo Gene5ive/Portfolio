@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :projects do
-    resources :skills
+  resources :skills do
+    resources :projects
   end
 end

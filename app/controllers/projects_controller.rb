@@ -1,43 +1,44 @@
 class ProjectsController < ApplicationController
-  def index
-    @projects = Project.all
-  end
-
   def show
     @project = Project.find(params[:id])
   end
 
   def new
-    @project = Project.new
+    @skill = Skill.find(params[:skill_id])
+    @project = @skill.projects.new
   end
 
   def create
-    @project = Project.new(project_params)
+    @skill = Skill.find(params[:skill_id])
+    @project = @skill.projects.new(project_params)
     if @project.save
       flash[:notice] = "Project successfully added!"
-      redirect_to projects_path #(or project_path@project)
+      redirect_to skill_project_path(@skill.project)
     else
       render :new
     end
   end
 
   def edit
-    @project = Project.find(params[:id])
+    @skill = Skill.find(params[:skill_id])
+    @project = @skill.projects.find(params[:id])
   end
 
   def update
-    @project = Project.find(params[:id])
+    @skill = Skill.find(params[:skill_id])
+    @project = @skill.projects.find(params[:id])
     if @project.update(project_params)
-      redirect_to projects_path
+      redirect_to skill_project_path(@skill.project)
     else
       render :edit
     end
   end
 
   def destroy
-    @project = Project.find(params[:id])
+    @skill = Skill.find(params[:skill_id])
+    @project = @skill.projects.find(params[:id])
     @project.destroy
-    redirect_to projects_path
+    redirect_to skill_project_path(@skill.project)
   end
 
   private
