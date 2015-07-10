@@ -26,6 +26,7 @@ class SkillsController < ApplicationController
   end
 
   def update
+    flash[:notice] = "Skill successfully updated!"
     @skill = Skill.find(params[:id])
     if @skill.update(skill_params)
       redirect_to skills_path
@@ -35,6 +36,7 @@ class SkillsController < ApplicationController
   end
 
   def destroy
+    flash[:notice] = "Skill successfully deleted!"
     @skill = Skill.find(params[:id])
     @skill.destroy
     redirect_to skills_path
