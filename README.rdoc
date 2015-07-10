@@ -10,7 +10,7 @@ https://morning-atoll-7625.herokuapp.com/
 
 Author: Frank Johnson
 
-``
+```
 Git clone https://github.com/Gene5ive/porfolio_rails.git
 
 cd portfolio_rails
@@ -24,7 +24,7 @@ rake db:test:prepare
 rails s
 
 navigate to localhost:3000
-``
+```
 
 
 License: MIT
