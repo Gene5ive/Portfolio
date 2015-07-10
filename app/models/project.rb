@@ -4,5 +4,4 @@ class Project < ActiveRecord::Base
   validates :name, :description, :presence => true
 
   attr_accessible :name, :description, :project_link
-
 end

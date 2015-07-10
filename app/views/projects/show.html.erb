@@ -1,12 +1,6 @@
-<% content_for(:title, "Portfolio") %>
-<% content_for(:navbar) do %>
-  <li><a href="/">Home</a></li>
-  <li><a href="/projects">Projects</a></li>
-<% end %>
-
 <h1><%= @project.name %></h1>
 <h2><%= @project.description %></h2>
-<h2><%= @project.project_link %></h2>
+<h2><a href="<%= @project.project_link %>"><%= @project.project_link %></a></h2>
 
 <p><%= link_to "Edit Project", edit_skill_project_path(@skill, @project) %></p>
 <p><%= link_to "Delete Project", skill_path(@skill, @project),

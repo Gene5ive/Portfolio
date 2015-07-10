@@ -1,9 +1,3 @@
-<% content_for(:title, "Portfolio") %>
-<% content_for(:navbar) do %>
-  <li><a href="/">Home</a></li>
-  <li><a href="/skills">Skills</a></li>
-<% end %>
-
 <h1>Skill: <%= @skill.name %></h1>
 <h2>Description: <%= @skill.description %></h2>
 
@@ -14,7 +8,7 @@
       <li>
         <%= project.name %> |
         <%= project.description %> |
-        <%= project.project_link %> |
+        <a href="<%= project.project_link %>"><%= project.project_link %></a> |
         <%= link_to "Edit Project", edit_skill_project_path(@skill, project) %> |
         <%= link_to "Delete Project", skill_project_path(@skill, project),
                                  :data => { :confirm => "You sure?",

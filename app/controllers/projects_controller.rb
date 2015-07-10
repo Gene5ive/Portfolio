@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
+
   def show
     @project = Project.find(params[:id])
   end
