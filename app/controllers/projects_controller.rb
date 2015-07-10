@@ -1,8 +1,7 @@
 class ProjectsController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show]
-
   def show
-    @project = Project.find(params[:id])
+    @skill = Skill.find(params[:skill_id])
+    @project = @skill.projects.find(params[:id])
   end
 
   def new

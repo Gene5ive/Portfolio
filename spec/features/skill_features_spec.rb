@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "the skill feature process" do
   it "adds a new skill" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     visit skills_path
     click_on 'Add Skill'
     fill_in 'Name', :with => 'Ruby'
@@ -11,6 +13,8 @@ describe "the skill feature process" do
   end
 
   it "edits an existing skill" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     visit edit_skill_path(skill)
     fill_in "Description", with: "RSpec and Capybara"
@@ -19,6 +23,8 @@ describe "the skill feature process" do
   end
 
   it "deletes a skill" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     visit skills_path(skill)
     click_on "Delete"
@@ -26,6 +32,8 @@ describe "the skill feature process" do
   end
 
   it "gives an error when no name is entered" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     visit new_skill_path
     click_on 'Create Skill'
     expect(page).to have_content 'errors'

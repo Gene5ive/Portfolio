@@ -1,6 +1,8 @@
 <h1><%= @project.name %></h1>
 <h2><%= @project.description %></h2>
-<h2><a href="<%= @project.project_link %>"><%= @project.project_link %></a></h2>
+<h4><a href="<%= @project.project_link %>"><%= @project.project_link %></a></h4>
+
+<br>
 
 <p><%= link_to "Edit Project", edit_skill_project_path(@skill, @project) %></p>
 <p><%= link_to "Delete Project", skill_path(@skill, @project),

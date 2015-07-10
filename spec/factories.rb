@@ -8,4 +8,9 @@ FactoryGirl.define do
     name('Testing')
     description('Front-and-back-end testing')
   end
+
+  factory(:user) do
+    email('email@email.com')
+    password('password')
+  end
 end

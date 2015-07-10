@@ -2,11 +2,11 @@
 <h2>Description: <%= @skill.description %></h2>
 
 <% if @skill.projects.any? %>
-  <h4>Here are all the projects I completed using this skill:</h4>
+  <h4>Here are all the projects I have completed using this skill:</h4>
   <ul>
     <% @skill.projects.each do |project| %>
       <li>
-        <%= project.name %> |
+        <%= link_to project.name, skill_project_path(@skill, project) %> |
         <%= project.description %> |
         <a href="<%= project.project_link %>"><%= project.project_link %></a> |
         <%= link_to "Edit Project", edit_skill_project_path(@skill, project) %> |

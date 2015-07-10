@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "the project feature process" do
   it "adds a new project" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     visit skill_path(skill)
     click_on 'Add Project'
@@ -12,6 +14,8 @@ describe "the project feature process" do
   end
 
   it "edits an existing project" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     visit skill_path(skill)
     click_on 'Add Project'
@@ -27,6 +31,8 @@ describe "the project feature process" do
   end
 
   it "deletes a project" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     visit skill_path(skill)
     click_on 'Add Project'
@@ -39,6 +45,8 @@ describe "the project feature process" do
   end
 
   it "gives an error when no name is entered" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     visit skill_path(skill)
     click_on 'Add Project'
