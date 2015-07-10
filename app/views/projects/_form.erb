@@ -1,11 +1,11 @@
 <%= render "layouts/errors", :object => @project %>
 
 <%= form_for [@skill, @project] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :project_link %>
-  <%= f.text_field :project_link %>
-  <%= f.submit %>
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :name %></p>
+  <p><%= f.label :description %></p>
+  <p><%= f.text_field :description %></p>
+  <p><%= f.label :project_link %></p>
+  <p><%= f.text_field :project_link %></p>
+  <p><%= f.submit %></p>
 <% end %>
