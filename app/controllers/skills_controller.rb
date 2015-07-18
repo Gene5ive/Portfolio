@@ -15,9 +15,13 @@ class SkillsController < ApplicationController
     @skill = Skill.new(skill_params)
     if @skill.save
       flash[:notice] = "Skill successfully added!"
-      redirect_to skills_path
     else
-      render :new
+      flash[:notice] = "Errors"
+      redirect_to new_skill_path
+    end
+    respond_to do |format|
+      format.html { redirect_to skills_path }
+      format.js
     end
   end
 
@@ -26,9 +30,9 @@ class SkillsController < ApplicationController
   end
 
   def update
-    flash[:notice] = "Skill successfully updated!"
     @skill = Skill.find(params[:id])
     if @skill.update(skill_params)
+      flash[:notice] = "Skill successfully updated!"
       redirect_to skills_path
     else
       render :edit
@@ -36,9 +40,9 @@ class SkillsController < ApplicationController
   end
 
   def destroy
-    flash[:notice] = "Skill successfully deleted!"
     @skill = Skill.find(params[:id])
     @skill.destroy
+    flash[:notice] = "Skill successfully deleted!"
     redirect_to skills_path
   end
 

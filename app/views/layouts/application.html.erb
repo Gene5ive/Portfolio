@@ -41,25 +41,32 @@
   </div>
 </div>
 
-<div id="container">
-  <div id="user_nav">
-    <div class="container">
-      <h5 class="text-center">
-        <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path %> |
-          <%= link_to "Login", new_user_session_path %>
-        <% end %>
-      </h5>
-    </div>
+<div id="user_nav">
+  <div class="container">
+    <h5 class="text-center">
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to 'Edit profile', edit_user_registration_path %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> |
+        <%= link_to "Login", new_user_session_path %>
+      <% end %>
+    </h5>
   </div>
+</div>
 
 <div class="container">
-  <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-    <%= yield %>
+  <div class="row">
+    <div class="left col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+      <h1>Contact:</h1>
+      <h3>jedigene@gmail.com</h3>
+      <h4>503 758 7819</h4>
+      <h5>Available for work in in Portland, OR</h5>
+    </div>
+    <div class="right col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+      <%= yield %>
+    </div>
   </div>
 </div>
 
