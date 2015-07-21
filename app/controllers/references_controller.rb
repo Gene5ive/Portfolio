@@ -3,10 +3,6 @@ class ReferencesController < ApplicationController
     @references = Reference.all
   end
 
-  def show
-    @reference = Reference.find(params[:id])
-  end
-
   def new
     @reference = Reference.new
   end

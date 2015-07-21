@@ -3,14 +3,14 @@ Rails.application.routes.draw do
   root to: "skills#index"
 
   resources :skills do
-    resources :projects
+    resources :projects, except: :index
   end
 
   resources :blogs do
-    resources :comments
+    resources :comments, except: :show
   end
 
-  resources :references
+  resources :references, except: :show
 
   resources :recommendations
 end
