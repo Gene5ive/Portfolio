@@ -1,0 +1,11 @@
+<%= render "layouts/errors", :object => @reference %>
+
+<%= form_for @reference do |f| %>
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :name %></p>
+  <p><%= f.label :company %></p>
+  <p><%= f.text_field :company %></p>
+  <p><%= f.label :contact %></p>
+  <p><%= f.text_field :contact %></p>
+  <p><%= f.submit %></p>
+<% end %>

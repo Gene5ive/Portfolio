@@ -1,11 +1,18 @@
 <br>
-<li>
-  <%= link_to blog.title, blog_path(blog) %> |
-  <%= blog.body %>
-  <%= link_to "Edit Blog", edit_blog_path(blog),
-  class: "btn btn-warning", id: "index_edit_blog", remote: true %>
-  <%= link_to "Delete", blog_path(blog), class: "btn btn-danger",
-  id: "index_delete_blog", :data => { :confirm => "You sure?",
-                                      :method => "Delete" } %>
-</li>
+  <div class="row">
+    <div class="left col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7">
+      <li>
+        <p><%= link_to blog.title, blog_path(blog) %></p>
+           <%= blog.body %>
+    </div>
+    <div class="right col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+        <%= link_to "Edit Blog", edit_blog_path(blog),
+            class: "btn btn-warning btn-xs", id: "index_edit_blog",
+            remote: true %>
+        <%= link_to "Delete", blog_path(blog), class: "btn btn-danger btn-xs",
+            id: "index_delete_blog", :data => { :confirm => "You sure?",
+                                                :method => "Delete" } %>
+      </li>
+    </div>
+  </div>
 <br>

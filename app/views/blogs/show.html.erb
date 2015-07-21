@@ -1,2 +1,8 @@
-<h1>Title: <%= @blog.title %></h1>
-<h2>Description: <%= @blog.body %></h2>
+<h3>Title: <%= @blog.title %></h3>
+<h4>Description: <%= @blog.body %></h4>
+
+<%= form_for [@comment] do |f| %>
+  <p><%= f.label :body %></p>
+  <p><%= f.text_area :body, :size => "50X20" %></p>
+  <p><%= f.submit %></p>
+<% end %>
