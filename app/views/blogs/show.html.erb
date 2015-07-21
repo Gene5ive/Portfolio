@@ -1,8 +1,13 @@
 <h3>Title: <%= @blog.title %></h3>
 <h4>Description: <%= @blog.body %></h4>
 
-<%= form_for [@comment] do |f| %>
+<%= form_for @comment do |f| %>
   <p><%= f.label :body %></p>
   <p><%= f.text_area :body, :size => "50X20" %></p>
   <p><%= f.submit %></p>
 <% end %>
+
+<p><%= link_to "Edit Blog", edit_blog_path(@blog) %></p>
+<p><%= link_to "Delete Blog", blog_path(@blog),
+       :data => { :confirm => "You sure?", :method => "Delete" }%></p>
+<p><%= link_to "Return to Posts", blogs_path %></p>

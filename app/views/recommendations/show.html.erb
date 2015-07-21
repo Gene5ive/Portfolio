@@ -1,0 +1,7 @@
+<h4>Body: <%= @recommendation.body %></h4>
+<h5>Name: <%= @recommendation.name %></h5>
+<h6>Company: <%= @recommendation.company %></h6>
+
+<p><%= link_to "Delete Recommendation", recommendation_path(@recommendation),
+       :data => { :confirm => "You sure?", :method => "Delete" }%></p>
+<p><%= link_to "Return to Recommendations", recommendations_path %></p>

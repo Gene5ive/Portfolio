@@ -6,11 +6,11 @@ Rails.application.routes.draw do
     resources :projects
   end
 
-  resources :references
-
-  resources :recommendations
-
   resources :blogs do
     resources :comments
   end
+
+  resources :references
+
+  resources :recommendations
 end

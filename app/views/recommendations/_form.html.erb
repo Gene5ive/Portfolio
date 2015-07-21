@@ -1,0 +1,11 @@
+<%= render "layouts/errors", :object => @recommendation %>
+
+<%= form_for @recommendation do |f| %>
+  <p><%= f.label :body %></p>
+  <p><%= f.text_area :body, :size => "50X20" %></p>
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :name %></p>
+  <p><%= f.label :company %></p>
+  <p><%= f.text_field :company %></p>
+  <p><%= f.submit %></p>
+<% end %>

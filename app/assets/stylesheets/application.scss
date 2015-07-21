@@ -12,13 +12,16 @@ h1 {
 #index_edit_blog,
 #index_delete_blog,
 #index_edit_reference,
-#index_delete_reference {
+#index_delete_reference,
+#index_edit_recommendation,
+#index_delete_recommendation {
   float: right;
 }
 
 #new_skill_link,
 #new_blog_link,
-#new_reference_link {
+#new_reference_link,
+#new_recommendation_link {
   float: right;
 }
 
@@ -31,20 +34,20 @@ h1 {
 }
 
 .circular {
-  width: 300px;
-  height: 300px;
+  width: 275px;
+  height: 275px;
   border-radius: 150px;
   -webkit-border-radius: 150px;
   -moz-border-radius: 150px;
   background: url('gene.jpg') no-repeat;
   background-position:50% 50%;
-  background-size: 300px 300px;
+  background-size: 275px 275px;
 }
 
 #contact {
-  padding-left: 60px;
+  padding-left: 50px;
 }
 
 .content {
-  padding-top: 100px;
+  padding-top: 75px;
 }

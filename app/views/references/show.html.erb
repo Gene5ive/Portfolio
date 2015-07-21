@@ -1,3 +1,8 @@
 <h4>Name: <%= @reference.name %></h4>
 <h5>Company: <%= @reference.company %></h5>
 <h6>Contact: <%= @reference.contact %></h6>
+
+<p><%= link_to "Edit Reference", edit_reference_path(@reference) %></p>
+<p><%= link_to "Delete Reference", reference_path(@reference),
+       :data => { :confirm => "You sure?", :method => "Delete" }%></p>
+<p><%= link_to "Return to References", references_path %></p>
