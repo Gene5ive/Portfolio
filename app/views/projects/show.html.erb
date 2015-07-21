@@ -4,8 +4,8 @@
 
 <br>
 
-<p><%= link_to "Edit Project", edit_skill_project_path(@skill, @project) %></p>
-<p><%= link_to "Delete Project", skill_project_path(@skill, @project),
+<p><%= link_to "Edit", edit_skill_project_path(@skill, @project) %></p>
+<p><%= link_to "Delete", skill_project_path(@skill, @project),
                          :data => { :confirm => "You sure?",
                                     :method => "Delete" }%></p>
 <p><%= link_to "Return to Skills", skills_path %></p>

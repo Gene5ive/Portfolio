@@ -7,7 +7,7 @@
   <p><%= f.submit %></p>
 <% end %>
 
-<p><%= link_to "Edit Blog", edit_blog_path(@blog) %></p>
-<p><%= link_to "Delete Blog", blog_path(@blog),
+<p><%= link_to "Edit", edit_blog_path(@blog) %></p>
+<p><%= link_to "Delete", blog_path(@blog),
        :data => { :confirm => "You sure?", :method => "Delete" }%></p>
 <p><%= link_to "Return to Posts", blogs_path %></p>
