@@ -7,11 +7,15 @@ h1 {
  display: inline;
 }
 
-.index_skill {
+#index_edit_skill,
+#index_delete_skill,
+#index_edit_blog,
+#index_delete_blog {
   float: right;
 }
 
-#new_skill_link {
+#new_skill_link,
+#new_blog_link {
   float: right;
 }
 

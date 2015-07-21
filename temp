@@ -1,0 +1,20 @@
+<% if @blog.comments.any? %>
+<h4>Comments:</h4>
+<ul>
+  <% @blog.comments.each do |comment| %>
+    <li>
+      <%= comment.body %> |
+      <%= comment.author %> |
+      <%= link_to "Delete Comment",
+        :data => { :confirm => "You sure?",
+        :method => "Delete" }%>
+    </li>
+  <% end %>
+</ul>
+  <% else %>
+    <p>No comments have been posted yet!</p>
+  <% end %>
+
+<p><%= link_to "Add Comment", new_blog_comment_path(@blog) %></p>
+
+<p><%= link_to "Return to Blog", blogs_path %></p>

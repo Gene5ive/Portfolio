@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+  devise_for :users, path_names: { sign_in: "login", sign_out: "logout" }
   root to: "skills#index"
 
   resources :skills do
     resources :projects
+  end
+
+  resources :references
+
+  resources :recommendations
+
+  resources :blogs do
+    resources :comments
   end
 end

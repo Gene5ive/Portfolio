@@ -1,0 +1,11 @@
+<br>
+<li>
+  <%= link_to blog.title, blog_path(blog) %> |
+  <%= blog.body %>
+  <%= link_to "Edit Blog", edit_blog_path(blog),
+  class: "btn btn-warning", id: "index_edit_blog", remote: true %>
+  <%= link_to "Delete", blog_path(blog), class: "btn btn-danger",
+  id: "index_delete_blog", :data => { :confirm => "You sure?",
+                                      :method => "Delete" } %>
+</li>
+<br>

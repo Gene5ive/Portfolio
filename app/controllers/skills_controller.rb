@@ -32,10 +32,14 @@ class SkillsController < ApplicationController
   def update
     @skill = Skill.find(params[:id])
     if @skill.update(skill_params)
-      flash[:notice] = "Skill successfully updated!"
-      redirect_to skills_path
+      flash[:notice] = "Skill successfully edited!"
     else
-      render :edit
+      flash[:notice] = "Errors"
+      redirect_to edit_skill_path
+    end
+    respond_to do |format|
+      format.html { redirect_to skills_path }
+      format.js
     end
   end
 

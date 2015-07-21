@@ -1,0 +1,9 @@
+<span><h1>Blog</h1><%= link_to "Post to Blog",
+                       new_blog_path,
+                       id: "new_blog_link",
+                       class: "btn btn-default",
+                       remote: true %></span>
+
+<ul id="blogs_list">
+  <%= render(@blogs) %>
+</ul>
