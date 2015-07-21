@@ -24,19 +24,20 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li class="active"><a href="/references">references<span class="sr-only">(current)</span></a></li>
+        <li><a href="/recommendations">recommendations</a></li>
+        <li><a href="/developer_blog">developer_blog</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <div class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><a href="">Logged in as <strong><%= current_user.email %></strong>.</a></li>
-          <li><%= link_to 'Edit profile', edit_user_registration_path %></li> |
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          Logged in as <strong><%= current_user.email %></strong>.\
+          <%= link_to 'Edit profile', edit_user_registration_path %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% else %>
-          <li><%= link_to "Sign up", new_user_registration_path %></li> |
-          <li><%= link_to "Login", new_user_session_path %></li>
+          <%= link_to "Sign up", new_user_registration_path %> |
+          <%= link_to "Login", new_user_session_path %>
         <% end %>
-      </ul>
+      </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -48,15 +49,10 @@
   </div>
 </div>
 
-<div id="user_nav">
-  <div class="container">
-  </div>
-</div>
-
 <div class="container">
   <div class="row">
     <div class="left col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-      <img class="img-circle" src="app/assets/images/gene.jpg"/>
+      <p id="img"></p>
       <h1>Contact:</h1>
       <h3>jedigene@gmail.com</h3>
       <h4>503 758 7819</h4>
