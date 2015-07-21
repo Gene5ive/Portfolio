@@ -3,7 +3,7 @@
   <%= link_to skill.name, skill_path(skill) %> |
   <%= skill.description %>
   <%= link_to "Edit Skill", edit_skill_path(skill),
-      class: "btn btn-warning index_skill" %> |
+      class: "btn btn-warning index_skill" %>
   <%= link_to "Delete", skill_path(skill), class: "btn btn-danger index_skill",
       :data => { :confirm => "You sure?", :method => "Delete" } %>
 </li>
