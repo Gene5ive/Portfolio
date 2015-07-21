@@ -30,6 +30,21 @@ h1 {
   clear: right;
 }
 
-#img {
-  background: url('gene.jpg');
+.circular {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  background: url('gene.jpg') no-repeat;
+  background-position:50% 50%;
+  background-size: 300px 300px;
+}
+
+#contact {
+  padding-left: 60px;
+}
+
+.content {
+  padding-top: 100px;
 }
