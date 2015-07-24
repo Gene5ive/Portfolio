@@ -1,0 +1,5 @@
+<%= form_for @comment do |f| %>
+  <p><%= f.label :body %></p>
+  <p><%= f.text_area :body, :size => "50X20" %></p>
+  <p><%= f.submit %></p>
+<% end %>
