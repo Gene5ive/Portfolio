@@ -16,7 +16,7 @@ describe "the skill feature process" do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
-    visit edit_skill_path(skill)
+    visit skill_path(skill)
     fill_in "Description", with: "RSpec and Capybara"
     click_on "Update Skill"
     expect(page).to have_content("Skill successfully updated!")

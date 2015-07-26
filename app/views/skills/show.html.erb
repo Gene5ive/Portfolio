@@ -9,8 +9,8 @@
         <%= link_to project.name, skill_project_path(@skill, project) %> |
         <%= project.description %> |
         <a href="<%= project.project_link %>"><%= project.project_link %></a> |
-        <%= link_to "Edit Project", edit_skill_project_path(@skill, project) %> |
-        <%= link_to "Delete Project", skill_project_path(@skill, project),
+        <%= link_to "Edit", edit_skill_project_path(@skill, project) %> |
+        <%= link_to "Delete", skill_project_path(@skill, project),
                                  :data => { :confirm => "You sure?",
                                             :method => "Delete" }%>
       </li>

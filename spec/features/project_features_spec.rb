@@ -23,7 +23,7 @@ describe "the project feature process" do
     fill_in 'Description', :with => 'Web app to display skills and projects'
     click_on 'Create Project'
     visit skill_path(skill)
-    click_on 'Edit Project'
+    click_on 'Edit'
     fill_in 'Name', :with => 'StatsKeeper'
     fill_in 'Description', :with => 'Web app to track sports stats'
     click_on 'Update Project'
@@ -40,7 +40,7 @@ describe "the project feature process" do
     fill_in 'Description', :with => 'Web app to display skills and projects'
     click_on 'Create Project'
     visit skill_path(skill)
-    click_on "Delete Project"
+    click_on "Delete"
     expect(page).to have_content("Project successfully deleted!")
   end
 

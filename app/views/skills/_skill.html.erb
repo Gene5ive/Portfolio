@@ -2,10 +2,9 @@
 <li>
   <%= link_to skill.name, skill_path(skill) %> |
   <%= skill.description %>
-  <%= link_to "Edit Skill", edit_skill_path(skill),
-      class: "btn btn-warning btn-xs", id: "index_edit_skill", remote: true %>
-  <%= link_to "Delete", skill_path(skill), class: "btn btn-danger btn-xs",
-      id: "index_delete_skill", :data => { :confirm => "You sure?",
-                                           :method => "Delete" } %>
+  <%= link_to "Edit", edit_skill_path(skill),
+      class: "index btn btn-warning btn-xs", remote: true %>
+  <%= link_to "Delete", skill_path(skill), class: "index btn btn-danger btn-xs",
+      :data => { :confirm => "You sure?", :method => "Delete" } %>
 </li>
 <br>

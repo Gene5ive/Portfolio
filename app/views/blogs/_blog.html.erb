@@ -6,11 +6,10 @@
     </div>
     <div class="right col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
         <%= link_to "Edit", edit_blog_path(blog),
-            class: "btn btn-warning btn-xs", id: "index_edit_blog",
-            remote: true %>
+            class: "index btn btn-warning btn-xs", remote: true %>
         <%= link_to "Delete", blog_path(blog), class: "btn btn-danger btn-xs",
-            id: "index_delete_blog", :data => { :confirm => "You sure?",
-                                                :method => "Delete" } %>
+            class: "index btn btn-danger btn-xs",
+            :data => { :confirm => "You sure?", :method => "Delete" } %>
       </li>
     </div>
   </div>
