@@ -1,9 +1,14 @@
 <h3>Title: <%= @blog.title %></h3>
-<h4>Description: <%= @blog.body %></h4>
+<h4>Body: <%= @blog.body %></h4>
 
-<p><%= link_to "Add Comment", new_blog_comment_path(blog), id: "comment_link", remote:true %></p>
+<p><%= link_to "Add Comment", new_blog_comment_path(@blog),
+       class: "index left btn btn-success btn-xs", remote:true %></p>
 
-<p><%= link_to "Edit", edit_blog_path(@blog) %></p>
-<p><%= link_to "Delete", blog_path(@blog),
+<p><%= link_to "Return to Posts", blogs_path,
+       class: "left btn btn-default btn-xs" %></p>
+
+<p><%= link_to "Edit", edit_blog_path(@blog),
+       class: "index btn btn-warning btn-xs", remote: true %></p>
+
+<p><%= link_to "Delete", blog_path(@blog), class: "index btn btn-danger btn-xs",
        :data => { :confirm => "You sure?", :method => "Delete" }%></p>
-<p><%= link_to "Return to Posts", blogs_path %></p>

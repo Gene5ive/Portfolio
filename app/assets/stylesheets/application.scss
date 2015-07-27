@@ -11,15 +11,16 @@ h1 {
   float: right;
 }
 
-#new_skill_link,
-#new_blog_link,
-#new_reference_link,
-#new_recommendation_link {
+.new {
   float: right;
 }
 
 .right {
   float: right;
+}
+
+.left {
+  float: left;
 }
 
 .avatar {
@@ -47,4 +48,8 @@ h1 {
 
 .navbar-right {
   padding-top: 15px;
+}
+
+.glyphicon {
+  padding-left: 5px;
 }

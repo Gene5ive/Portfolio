@@ -1,8 +1,6 @@
 <span><h1>Skills</h1><%= link_to "Add Skill",
-                         new_skill_path,
-                         id: "new_skill_link",
-                         class: "btn btn-default btn-xs",
-                         remote: true %></span>
+                         new_skill_path, class: "new btn btn-success btn-xs",
+                         id: "new_skill_link", remote: true %></span>
 
 <ul id="skills_list">
   <%= render(@skills) %>

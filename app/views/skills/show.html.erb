@@ -1,5 +1,7 @@
 <h1>Skill: <%= @skill.name %></h1>
-<h2>Description: <%= @skill.description %></h2>
+<span><h2>Description: <%= @skill.description %></h2>
+      <%= link_to "Add Project", new_skill_project_path(@skill),
+          class: "index btn btn-success btn-xs" %></span>
 
 <% if @skill.projects.any? %>
   <h4>Here are all the projects I have completed using this skill:</h4>
@@ -8,11 +10,8 @@
       <li>
         <%= link_to project.name, skill_project_path(@skill, project) %> |
         <%= project.description %> |
-        <a href="<%= project.project_link %>"><%= project.project_link %></a> |
-        <%= link_to "Edit", edit_skill_project_path(@skill, project) %> |
-        <%= link_to "Delete", skill_project_path(@skill, project),
-                                 :data => { :confirm => "You sure?",
-                                            :method => "Delete" }%>
+        <a href="<%= project.project_link %>">
+        <%= project.project_link %></a>
       </li>
     <% end %>
   </ul>
@@ -20,9 +19,12 @@
   <p>No projects have been described yet!</p>
 <% end %>
 
-<p><%= link_to "Add Project", new_skill_project_path(@skill) %></p>
-<p><%= link_to "Edit Skill", edit_skill_path(@skill) %></p>
-<p><%= link_to "Delete Skill", skill_path(@skill),
-                         :data => { :confirm => "You sure?",
-                                    :method => "Delete" }%></p>
-<p><%= link_to "Return to Skills", skills_path %></p>
+<p><%= link_to "Edit", edit_skill_path(@skill),
+       class: "index btn btn-warning btn-xs", remote: true %></p>
+
+<p><%= link_to "Delete", skill_path(@skill),
+       class: "index btn btn-danger btn-xs", :data => { :confirm => "You sure?",
+                                                  :method => "Delete" }%></p>
+
+<p><%= link_to "Return to Skills", skills_path,
+       class: "left btn btn-default btn-xs" %></p>

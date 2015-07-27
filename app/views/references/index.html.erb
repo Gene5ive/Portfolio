@@ -1,7 +1,6 @@
 <span><h1>References</h1><%= link_to "Add Reference",
                             new_reference_path,
-                            id: "new_reference_link",
-                            class: "btn btn-default btn-xs",
+                            class: "new btn btn-success btn-xs",
                             remote: true %></span>
 <ul id="references_list">
   <%= render(@references) %>

@@ -1,7 +1,6 @@
 <span><h1>Recommendations</h1><%= link_to "Add Recommendation",
                                   new_recommendation_path,
-                                  id: "new_recommendation_link",
-                                  class: "btn btn-default btn-xs",
+                                  class: " new btn btn-success btn-xs",
                                   remote: true %></span>
 <ul id="recommendations_list">
   <%= render(@recommendations) %>
