@@ -4,7 +4,7 @@ This app is still in development and satisfies the requirements for the followin
 
 https://www.learnhowtoprogram.com/lessons/intro-to-rails-code-review-thursday-classwork
 
-https://morning-atoll-7625.herokuapp.com/
+https://genejohnson.herokuapp.com/
 
 * Ruby version : Rails '4.2.3'
 
