@@ -1,8 +1,6 @@
 == README for Portfolio App
 
-This app is still in development and satisfies the requirements for the following lesson:
-
-https://www.learnhowtoprogram.com/lessons/intro-to-rails-code-review-thursday-classwork
+This app is still in development and provides rudimentary information about my professional software development portfolio:
 
 https://genejohnson.herokuapp.com/
 
@@ -25,6 +23,5 @@ rails s
 
 navigate to localhost:3000
 ```
-
 
 License: MIT
