@@ -8,7 +8,7 @@ https://morning-atoll-7625.herokuapp.com/
 
 * Ruby version : Rails '4.2.3'
 
-Author: Frank Johnson
+Author: Gene Johnson
 
 ```
 Git clone https://github.com/Gene5ive/porfolio_rails.git
