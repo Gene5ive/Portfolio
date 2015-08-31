@@ -1,4 +1,6 @@
 class ReferencesController < ApplicationController
+  before_filter :authenticate_admin!, except: [:index, :show]
+
   def index
     @references = Reference.all
   end
