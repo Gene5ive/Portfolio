@@ -42,9 +42,13 @@ class RecommendationsController < ApplicationController
   end
 
   def destroy
-    @recommendation = Recommendation.find(params[:id])
-    @recommendation.destroy
-    flash[:notice] = "Recommendation successfully deleted!"
+    if current_user && current_user.admin?
+      @recommendation = Recommendation.find(params[:id])
+      @recommendation.destroy
+      flash[:notice] = "Recommendation successfully deleted!"
+    else
+      redirect_to new_user_session_path
+    end
     redirect_to recommendations_path
   end
 

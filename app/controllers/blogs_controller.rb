@@ -8,7 +8,11 @@ class BlogsController < ApplicationController
   end
 
   def new
-    @blog = Blog.new
+    if current_user && current_user.admin?
+      @blog = Blog.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
@@ -26,7 +30,11 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    @blog = Blog.find(params[:id])
+    if current_user && current_user.admin?
+      @blog = Blog.find(params[:id])
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def update

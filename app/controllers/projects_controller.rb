@@ -5,8 +5,12 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @skill = Skill.find(params[:skill_id])
-    @project = @skill.projects.new
+    if current_user && current_user.admin?
+      @skill = Skill.find(params[:skill_id])
+      @project = @skill.projects.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
@@ -21,8 +25,12 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @skill = Skill.find(params[:skill_id])
-    @project = @skill.projects.find(params[:id])
+    if current_user && current_user.admin?
+      @skill = Skill.find(params[:skill_id])
+      @project = @skill.projects.find(params[:id])
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def update

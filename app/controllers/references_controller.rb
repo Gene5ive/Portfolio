@@ -4,7 +4,11 @@ class ReferencesController < ApplicationController
   end
 
   def new
-    @reference = Reference.new
+    if current_user && current_user.admin?
+      @reference = Reference.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
@@ -21,7 +25,11 @@ class ReferencesController < ApplicationController
   end
 
   def edit
-    @reference = Reference.find(params[:id])
+    if current_user && current_user.admin?
+      @reference = Reference.find(params[:id])
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def update
