@@ -1,7 +1,8 @@
-<span><h1>Recommendations</h1><%= link_to "Add Recommendation",
-                                  new_recommendation_path,
-                                  class: " new btn btn-success btn-xs",
-                                  remote: true %></span>
+<span><h1>Recommendations</h1> // feel free to contribute
+  <%= link_to "Add Recommendation", new_recommendation_path,
+      class: " new btn btn-success btn-xs", remote: true %>
+</span>
+
 <ul id="recommendations_list">
   <%= render(@recommendations) %>
 </ul>

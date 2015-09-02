@@ -1,7 +1,8 @@
-<span><h1>References</h1><%= link_to "Add Reference",
-                            new_reference_path,
-                            class: "new btn btn-success btn-xs",
-                            remote: true %></span>
+<span><h1>References</h1> // technology professionals with whom I associate
+  <%= link_to "Add Reference", new_reference_path,
+      class: "new btn btn-success btn-xs", remote: true %>
+</span>
+
 <ul id="references_list">
   <%= render(@references) %>
 </ul>
