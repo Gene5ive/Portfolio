@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-  before_filter :authenticate_admin!, except: [:index, :show]
 
   def show
     @skill = Skill.find(params[:skill_id])
@@ -7,12 +6,8 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    if current_user && current_user.admin?
       @skill = Skill.find(params[:skill_id])
       @project = @skill.projects.new
-    else
-      redirect_to new_user_session_path
-    end
   end
 
   def create
@@ -27,11 +22,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    if current_user && current_user.admin?
       @skill = Skill.find(params[:skill_id])
-      @project = @skill.projects.find(params[:id])
-    else
-      redirect_to new_user_session_path
     end
   end
 

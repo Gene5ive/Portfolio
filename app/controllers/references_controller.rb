@@ -1,16 +1,11 @@
 class ReferencesController < ApplicationController
-  before_filter :authenticate_admin!, except: [:index, :show]
 
   def index
     @references = Reference.all
   end
 
   def new
-    if current_user && current_user.admin?
-      @reference = Reference.new
-    else
-      redirect_to new_user_session_path
-    end
+    @reference = Reference.new
   end
 
   def create
@@ -27,11 +22,7 @@ class ReferencesController < ApplicationController
   end
 
   def edit
-    if current_user && current_user.admin?
-      @reference = Reference.find(params[:id])
-    else
-      redirect_to new_user_session_path
-    end
+    @reference = Reference.find(params[:id])
   end
 
   def update

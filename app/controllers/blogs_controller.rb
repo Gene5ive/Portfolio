@@ -1,5 +1,4 @@
 class BlogsController < ApplicationController
-  before_filter :authenticate_admin!, except: [:index, :show]
 
   def index
     @blogs = Blog.all
@@ -10,11 +9,7 @@ class BlogsController < ApplicationController
   end
 
   def new
-    if current_user && current_user.admin?
-      @blog = Blog.new
-    else
-      redirect_to new_user_session_path
-    end
+    @blog = Blog.new
   end
 
   def create
@@ -32,11 +27,7 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    if current_user && current_user.admin?
-      @blog = Blog.find(params[:id])
-    else
-      redirect_to new_user_session_path
-    end
+    @blog = Blog.find(params[:id])
   end
 
   def update

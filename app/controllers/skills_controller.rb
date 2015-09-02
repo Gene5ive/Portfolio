@@ -1,5 +1,4 @@
 class SkillsController < ApplicationController
-  before_filter :authenticate_admin!, except: [:index, :show]
 
   def index
     @skills = Skill.all
@@ -10,11 +9,7 @@ class SkillsController < ApplicationController
   end
 
   def new
-    if current_user && current_user.admin?
-      @skill = Skill.new
-    else
-      redirect_to new_user_session_path
-    end
+    @skill = Skill.new
   end
 
   def create
@@ -32,11 +27,7 @@ class SkillsController < ApplicationController
   end
 
   def edit
-    if current_user && current_user.admin?
-      @skill = Skill.find(params[:id])
-    else
-      redirect_to new_user_session_path
-    end
+    @skill = Skill.find(params[:id])
   end
 
   def update
