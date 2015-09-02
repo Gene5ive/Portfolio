@@ -1,0 +1,4 @@
+--2015-09-02 14:28:36--  ftp://heroku%20pg/backups%20public-url
+           => 'backups public-url'
+Resolving heroku pg... failed: nodename nor servname provided, or not known.
+wget: unable to resolve host address 'heroku pg'
