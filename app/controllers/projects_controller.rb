@@ -6,8 +6,8 @@ class ProjectsController < ApplicationController
   end
 
   def new
-      @skill = Skill.find(params[:skill_id])
-      @project = @skill.projects.new
+    @skill = Skill.find(params[:skill_id])
+    @project = @skill.projects.new
   end
 
   def create
@@ -22,8 +22,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-      @skill = Skill.find(params[:skill_id])
-    end
+    @skill = Skill.find(params[:skill_id])
   end
 
   def update
