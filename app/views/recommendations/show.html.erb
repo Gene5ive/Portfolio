@@ -1,6 +1,6 @@
-<h3>Body: <%= @recommendation.body %></h3>
-<h3>Name: <%= @recommendation.name %></h3>
-<h3>Company: <%= @recommendation.company %></h3>
+<h3><span class="glyphicon glyphicon-console" aria-hidden="true"></span>  <%= @recommendation.body %></h3>
+<h3>Name:  <%= @recommendation.name %></h3>
+<h3>Company:  <%= @recommendation.company %></h3>
 
 <p><%= link_to "Delete", recommendation_path(@recommendation),
        class: "btn btn-danger btn-xs",
