@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  before_filter :authenticate_admin!, except: [:destroy]
+  # Use before_action instead of deprecated before_filter
+  before_action :authenticate_admin!, except: [:destroy]
 
   def new
     @blog = Blog.find(params[:blog_id])
