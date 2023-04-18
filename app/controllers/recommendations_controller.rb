@@ -1,10 +1,13 @@
 class RecommendationsController < ApplicationController
+  # Use before_action to avoid repeating code for finding a recommendation
+  before_action :find_recommendation, only: [:show, :edit, :update, :destroy]
+
   def index
     @recommendations = Recommendation.all
   end
 
   def show
-    @recommendation = Recommendation.find(params[:id])
+    # Use the instance variable set by before_action
   end
 
   def new
@@ -25,11 +28,10 @@ class RecommendationsController < ApplicationController
   end
 
   def edit
-    @recommendation = Recommendation.find(params[:id])
+    # Use the instance variable set by before_action
   end
 
   def update
-    @recommendation = Recommendation.find(params[:id])
     if @recommendation.update(recommendation_params)
       flash[:notice] = "Recommendation successfully edited!"
     else
@@ -43,7 +45,6 @@ class RecommendationsController < ApplicationController
 
   def destroy
     if current_user && current_user.admin?
-      @recommendation = Recommendation.find(params[:id])
       @recommendation.destroy
       flash[:notice] = "Recommendation successfully deleted!"
     else
@@ -55,5 +56,9 @@ class RecommendationsController < ApplicationController
   private
   def recommendation_params
     params.require(:recommendation).permit(:body, :name, :company)
+  end
+
+  def find_recommendation
+    @recommendation = Recommendation.find(params[:id])
   end
 end
