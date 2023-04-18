@@ -1,45 +1,44 @@
- @import "bootstrap-sprockets";
- @import "./variables";
- @import "bootstrap";
- @import "./bootswatch";
+/* Import Bootstrap dependencies */
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
-h1 {
- display: inline;
+/* Import custom variables and bootswatch styles */
+@import "./variables";
+@import "./bootswatch";
+
+/* Use classes for styling, avoid using element selectors for better reusability */
+
+/* Use a class instead of an element selector for h1 */
+.heading {
+  display: inline;
 }
 
-.index {
+/* Group common float styles into classes */
+.float-right {
   float: right;
 }
 
-.new {
-  float: right;
-}
-
-.right {
-  float: right;
-}
-
-.left {
+.float-left {
   float: left;
 }
 
+/* Use a class instead of an id for styling */
 .avatar {
   clear: right;
 }
 
-.circular {
+/* Use a class for circular avatar with background image */
+.circular-avatar {
   width: 275px;
   height: 275px;
   border-radius: 150px;
-  -webkit-border-radius: 150px;
-  -moz-border-radius: 150px;
-  background: url('gene.jpg') no-repeat;
-  background-position:50% 50%;
-  background-size: 275px 275px;
+  background: url('gene.jpg') no-repeat center center;
+  background-size: cover;
   margin-top: 50px;
 }
 
-#contact {
+/* Use classes for padding instead of using ids */
+.contact {
   padding-left: 40px;
   padding-top: 50px;
 }
@@ -48,10 +47,12 @@ h1 {
   padding-top: 50px;
 }
 
+/* Use Bootstrap class for aligning navbar items to the right */
 .navbar-right {
   padding-top: 15px;
 }
 
+/* Use a class for glyphicon with color */
 .glyphicon {
   padding-left: 5px;
   color: #26D6A9;
