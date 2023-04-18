@@ -21,8 +21,8 @@ class SkillsController < ApplicationController
       redirect_to new_skill_path
     end
     respond_to do |format|
-      format.html { redirect_to skills_path }
-      format.js
+      format.html { redirect_to skills_path } # Redirect to skills index page after successful create
+      format.js # Allow for JavaScript response
     end
   end
 
@@ -39,8 +39,8 @@ class SkillsController < ApplicationController
       redirect_to edit_skill_path
     end
     respond_to do |format|
-      format.html { redirect_to skills_path }
-      format.js
+      format.html { redirect_to skills_path } # Redirect to skills index page after successful update
+      format.js # Allow for JavaScript response
     end
   end
 
