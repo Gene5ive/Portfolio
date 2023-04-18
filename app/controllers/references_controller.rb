@@ -1,4 +1,5 @@
 class ReferencesController < ApplicationController
+  before_action :set_reference, only: [:edit, :update, :destroy]
 
   def index
     @references = Reference.all
@@ -11,9 +12,9 @@ class ReferencesController < ApplicationController
   def create
     @reference = Reference.new(reference_params)
     if @reference.save
-      flash[:notice] = "Reference successfully added!"
+      flash[:notice] = "Added!"
     else
-      flash[:notice] = "Errors"
+      flash[:alert] = "Reference couldn't be saved. Please check your input and try again."
     end
     respond_to do |format|
       format.html { redirect_to references_path }
@@ -22,15 +23,13 @@ class ReferencesController < ApplicationController
   end
 
   def edit
-    @reference = Reference.find(params[:id])
   end
 
   def update
-    @reference = Reference.find(params[:id])
     if @reference.update(reference_params)
-      flash[:notice] = "Reference successfully edited!"
+      flash[:notice] = "Saved!"
     else
-      flash[:notice] = "Errors"
+      flash[:alert] = "Reference couldn't be saved. Please check your input and try again."
     end
     respond_to do |format|
       format.html { redirect_to references_path }
@@ -39,13 +38,17 @@ class ReferencesController < ApplicationController
   end
 
   def destroy
-    @reference = Reference.find(params[:id])
     @reference.destroy
-    flash[:notice] = "Reference successfully deleted!"
+    flash[:notice] = "Reference deleted successfully!"
     redirect_to references_path
   end
 
   private
+
+  def set_reference
+    @reference = Reference.find(params[:id])
+  end
+
   def reference_params
     params.require(:reference).permit(:name, :company, :contact)
   end
